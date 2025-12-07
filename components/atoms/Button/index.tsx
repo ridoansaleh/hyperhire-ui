@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export default function Button({ children, ...props }: ButtonProps) {
   return (
     <button
-      className="hidden lg:block h-9 px-6 bg-white font-black text-base text-blue-600 text-white rounded-md"
+      className="hidden lg:block h-9 px-6 bg-white font-black text-base text-[#4A77FF] rounded-md"
       {...props}
     >
       {children}
