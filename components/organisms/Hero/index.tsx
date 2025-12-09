@@ -86,6 +86,35 @@ export default function Hero() {
           >
             개발자가 필요하신가요?
           </div>
+          {/* Achievements => Desktop Only */}
+          <div id="achievements" className="hidden lg:flex gap-4 mt-[30px]">
+            <div className="w-[140px]">
+              <div className="inline-block border-t font-black pt-2">
+                평균 월 120만원
+              </div>
+              <div className="mt-2 text-[#FFFFFFCC] text-sm">
+                임금을 해당 국가를 기준으로 계산합니다.
+              </div>
+            </div>
+
+            <div className="w-[140px]">
+              <div className="inline-block border-t font-black pt-2">
+                최대 3회 인력교체
+              </div>
+              <div className="mt-2 text-[#FFFFFFCC] text-sm">
+                막상 채용해보니 맞지 않아도 걱정하지 마세요.
+              </div>
+            </div>
+
+            <div className="w-[140px]">
+              <div className="inline-block border-t font-black pt-2">
+                평균 3일, 최대 10일
+              </div>
+              <div className="mt-2 text-[#FFFFFFCC] text-sm">
+                급하게 사람이 필요한 경우에도 빠른 채용이 가능합니다.
+              </div>
+            </div>
+          </div>
         </div>
         <div id="slide-cards" className="lg:max-w-[50%] mt-[80px] lg:mt-0">
           <CardSlider profiles={profiles} />
