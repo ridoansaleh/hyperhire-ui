@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Tooltip from "@/components/atoms/Tooltip";
 import CardSlider from "../CardSlider";
 import { ProfileCardProps } from "../ProfileCard";
@@ -58,7 +59,10 @@ export default function Hero() {
   ];
   return (
     <div className="py-4 px-4 lg:px-2 xl:px-0">
-      <div id="top-content" className="flex flex-col lg:flex-row gap-4 mt-[80px]">
+      <div
+        id="top-content"
+        className="flex flex-col lg:flex-row gap-4 mt-[80px]"
+      >
         <div id="marketing-text" className="pb-4 font-black">
           <Tooltip
             bgColor="bg-[#8BC4FF]"
@@ -69,11 +73,17 @@ export default function Hero() {
               최고의 실력을 가진 외국인 인재를 찾고 계신가요?
             </div>
           </Tooltip>
-          <div id="sub-title" className="lg:w-[260px] mt-[20px] text-[18px] text-[#FFFFFFCC]">
+          <div
+            id="sub-title"
+            className="lg:w-[260px] mt-[20px] text-[18px] text-[#FFFFFFCC]"
+          >
             법률 및 인사관리 부담없이 1주일 이내에 원격으로 채용해보세요.
           </div>
           {/* Question => Desktop Only */}
-          <div id="marketing-question" className="hidden lg:block mt-[20px] underline">
+          <div
+            id="marketing-question"
+            className="hidden lg:block mt-[20px] underline"
+          >
             개발자가 필요하신가요?
           </div>
         </div>
@@ -84,9 +94,52 @@ export default function Hero() {
       <div id="slide-items"></div>
 
       {/* SERVICES section => Mobile Only */}
-      <div id="services">
-        <div id="items"></div>
-        <div id="question"></div>
+      <div id="services" className="lg:hidden mt-[30px]">
+        <div id="items" className="flex flex-wrap gap-4">
+          <div className="w-[120px] flex items-center gap-2">
+            <Image
+              src="/images/checkbox.png"
+              alt="Item"
+              width={20}
+              height={20}
+              className="h-[20px]"
+            />{" "}
+            <span>한국어 능력</span>
+          </div>
+          <div className="w-[120px] flex items-center gap-2">
+            <Image
+              src="/images/checkbox.png"
+              alt="Item"
+              width={20}
+              height={20}
+              className="h-[20px]"
+            />{" "}
+            <span>업무 수행 능력</span>
+          </div>
+          <div className="w-[120px] flex items-center gap-2">
+            <Image
+              src="/images/checkbox.png"
+              alt="Item"
+              width={20}
+              height={20}
+              className="h-[20px]"
+            />{" "}
+            <span>겸업 여부</span>
+          </div>
+          <div className="w-[120px] flex items-center gap-2">
+            <Image
+              src="/images/checkbox.png"
+              alt="Item"
+              width={20}
+              height={20}
+              className="h-[20px]"
+            />{" "}
+            <span>평판 조회</span>
+          </div>
+        </div>
+        <div id="question" className="mt-[20px] text-[#FBFF23] underline">
+          개발자가 필요하신가요?
+        </div>
       </div>
     </div>
   );
