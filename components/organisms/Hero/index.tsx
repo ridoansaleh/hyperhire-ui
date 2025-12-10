@@ -1,62 +1,10 @@
 import Image from "next/image";
 import Tooltip from "@/components/atoms/Tooltip";
+import FeatureSlider from "@/components/organisms/FeatureSlider";
 import CardSlider from "../CardSlider";
-import { ProfileCardProps } from "../ProfileCard";
+import { profiles, features } from "./data";
 
 export default function Hero() {
-  const profiles: ProfileCardProps[] = [
-    {
-      img: "/images/avatar.png",
-      name: "Arjun Mehta",
-      country: {
-        name: "India",
-        flagImg: "/images/colombia.png",
-      },
-      role: "마케팅",
-      experience: "2y+",
-      skills: [
-        "마케팅 콘텐츠 제작",
-        "인스타그램 관리",
-        "트위터 관리",
-        "블로그 글 작성",
-      ],
-      monthlyIncome: 300,
-    },
-    {
-      img: "/images/avatar.png",
-      name: "Abhishek Gupta",
-      country: {
-        name: "India",
-        flagImg: "/images/colombia.png",
-      },
-      role: "디자인",
-      experience: "3y+",
-      skills: [
-        "마케팅 콘텐츠 제작",
-        "인스타그램 관리",
-        "트위터 관리",
-        "블로그 글 작성",
-      ],
-      monthlyIncome: 200,
-    },
-    {
-      img: "/images/avatar.png",
-      name: "Priya Sharma",
-      country: {
-        name: "India",
-        flagImg: "/images/colombia.png",
-      },
-      role: "개발자",
-      experience: "4y+",
-      skills: [
-        "마케팅 콘텐츠 제작",
-        "인스타그램 관리",
-        "트위터 관리",
-        "블로그 글 작성",
-      ],
-      monthlyIncome: 270,
-    },
-  ];
   return (
     <div className="py-4 px-4 lg:px-2 xl:px-0">
       <div
@@ -120,7 +68,10 @@ export default function Hero() {
           <CardSlider profiles={profiles} />
         </div>
       </div>
-      <div id="slide-items"></div>
+      {/* Features Slide => Desktop Only */}
+      <div id="slide-items" className="hidden lg:block mt-[72px]">
+        <FeatureSlider items={features} />
+      </div>
 
       {/* SERVICES section => Mobile Only */}
       <div id="services" className="lg:hidden mt-[30px]">
