@@ -35,7 +35,7 @@ export default function Hero() {
             개발자가 필요하신가요?
           </div>
           {/* Achievements => Desktop Only */}
-          <div id="achievements" className="hidden lg:flex gap-4 mt-[30px]">
+          <div id="achievements" className="hidden lg:flex gap-4 mt-[72px]">
             <div className="w-[140px]">
               <div className="inline-block border-t font-black pt-2">
                 평균 월 120만원
@@ -69,7 +69,7 @@ export default function Hero() {
         </div>
       </div>
       {/* Features Slide => Desktop Only */}
-      <div id="slide-items" className="hidden lg:block mt-[72px]">
+      <div id="slide-items" className="hidden lg:block mt-[72px] mb-[64px]">
         <FeatureSlider items={features} />
       </div>
 
