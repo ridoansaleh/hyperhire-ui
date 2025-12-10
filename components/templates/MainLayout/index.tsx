@@ -23,7 +23,9 @@ export default function MainLayout({
         <header className="max-w-[1024px] mx-auto">{header}</header>
         <main className="max-w-[1024px] mx-auto">{children}</main>
       </div>
-      <footer>{footer}</footer>
+      <footer className="bg-[#FBFBFB]">
+        <div className="max-w-[1024px] mx-auto bg-[#FBFBFB]">{footer}</div>
+      </footer>
     </div>
   );
 }
