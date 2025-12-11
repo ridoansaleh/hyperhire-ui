@@ -2,6 +2,7 @@
 
 import React from "react";
 import clsx from "clsx";
+import { useDeviceType } from "@/hooks/useDeviceType";
 
 type ArrowPosition =
   | "bottom-left"
@@ -25,7 +26,13 @@ export default function Tooltip({
   bgColor = "bg-[#000]",
   arrowPosition = "bottom-left",
 }: TooltipProps) {
-  const borderColor = bgColor.match(/\[(.*?)\]/)?.[1] || "#000";
+  const { isMobile } = useDeviceType();
+
+  const borderColorMobile =
+    (bgColor.split(" ")[0] || "").match(/\[(.*?)\]/)?.[1] || "#000";
+  const borderColorDesktop =
+    (bgColor.split(" ")[1] || "").match(/\[(.*?)\]/)?.[1] || borderColorMobile;
+  const borderColor = isMobile ? borderColorMobile : borderColorDesktop;
 
   const arrowClasses = clsx(
     "absolute w-0 h-0 border-[6px] border-transparent",

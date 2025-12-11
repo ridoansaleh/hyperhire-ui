@@ -13,8 +13,12 @@ export default function Hero() {
       >
         <div id="marketing-text" className="pb-4 font-black">
           <Tooltip
-            bgColor="bg-[#8BC4FF]"
-            content={<div className="text-white">풀타임, 파트타임</div>}
+            bgColor="bg-[#8BC4FF] lg:bg-[#FFFFFF]"
+            content={
+              <div className="text-white lg:text-[#40E2E8]">
+                풀타임, 파트타임
+              </div>
+            }
             arrowPosition="bottom-left"
           >
             <div id="title" className="text-[36px] leading-[130%]">
