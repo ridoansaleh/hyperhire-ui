@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 import type { DropdownItem } from "@/types/Menu";
 
 interface NavDropdownProps {
@@ -35,12 +35,8 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
         onClick={() => setOpen((prev) => !prev)}
       >
         {label}
-        <Image
-          src="/images/caret-down.png"
-          alt="Caret Down"
+        <ChevronDown
           className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`}
-          width={16}
-          height={16}
         />
       </button>
 
@@ -48,16 +44,16 @@ export default function NavDropdown({ label, items }: NavDropdownProps) {
         <div className="absolute left-0 mt-2 w-[240px] bg-white shadow-md rounded-md py-2 z-20">
           {items.map((item, index) => (
             <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className={`block px-3 py-2 text-black text-sm hover:bg-gray-100 ${
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className={`block px-3 py-2 text-black text-sm hover:bg-gray-100 ${
                 index === items.length - 1 ? "border-t border-gray-200" : ""
-                }`}
+              }`}
             >
-                {item.label}
+              {item.label}
             </Link>
-            ))}
+          ))}
         </div>
       )}
     </div>
