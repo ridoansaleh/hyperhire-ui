@@ -3,16 +3,16 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import ProfileCard, { ProfileCardProps } from "../ProfileCard";
+import ProfileCard from "../ProfileCard";
 import Tooltip from "@/components/atoms/Tooltip";
+import type { Profile } from "@/types/Profile";
 
 interface CardSliderProps {
-  profiles: ProfileCardProps[];
+  profiles: Profile[];
 }
 
 export default function CardSlider({ profiles }: CardSliderProps) {
-  // keep items in state so we can rotate order
-  const [items, setItems] = useState<ProfileCardProps[]>(() =>
+  const [items, setItems] = useState<Profile[]>(() =>
     profiles.slice()
   );
 

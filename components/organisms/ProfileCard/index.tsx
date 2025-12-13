@@ -2,19 +2,9 @@ import Image from "next/image";
 import Avatar from "@/components/atoms/Avatar";
 import ProfileHeader from "@/components/molecules/ProfileHeader";
 import SkillTag from "@/components/atoms/SkillTag/SkillTag";
+import type { Profile } from "@/types/Profile";
 
-export interface ProfileCardProps {
-  img: string;
-  name: string;
-  country: {
-    name: string;
-    flagImg: string;
-  };
-  role: string;
-  experience: string;
-  skills: string[];
-  monthlyIncome: number;
-}
+type ProfileCardProps = Profile;
 
 export default function ProfileCard({
   img,

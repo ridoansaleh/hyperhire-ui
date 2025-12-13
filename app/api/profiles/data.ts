@@ -1,35 +1,6 @@
-import { ProfileCardProps } from "../ProfileCard";
-import type { Feature } from "@/types/Feature";
+import type { Profile } from "@/types/Profile";
 
-export const features: Feature[] = [
-  {
-    logo: "/images/feature1.png",
-    label: "해외 마케팅",
-    alt: "Feature 1",
-  },
-  {
-    logo: "/images/feature2.png",
-    label: "퍼블리셔",
-    alt: "Feature 2",
-  },
-  {
-    logo: "/images/feature3.png",
-    label: "캐드원(제도사)",
-    alt: "Feature 3",
-  },
-  {
-    logo: "/images/feature4.png",
-    label: "해외 세일즈",
-    alt: "Feature 4",
-  },
-  {
-    logo: "/images/feature5.png",
-    label: "해외 CS",
-    alt: "Feature 5",
-  },
-];
-
-export const profiles: ProfileCardProps[] = [
+export const profiles: Profile[] = [
   {
     img: "/images/avatar.png",
     name: "Arjun Mehta",

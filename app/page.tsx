@@ -2,6 +2,7 @@ import MainLayout from "@/components/templates/MainLayout";
 import Navbar from "@/components/organisms/Navbar";
 import Hero from "@/components/organisms/Hero";
 import Footer from "@/components/organisms/Footer";
+import { BASE_URL } from "@/lib/config";
 
 const menuItems = [
   {
@@ -22,10 +23,27 @@ const menuItems = [
   },
 ];
 
-export default function Home() {
+async function getProfiles() {
+  const res = await fetch(`${BASE_URL}/api/profiles`, {
+    cache: "no-store",
+  });
+  return res.json();
+}
+
+async function getJobs() {
+  const res = await fetch(`${BASE_URL}/api/jobs`, {
+    cache: "no-store",
+  });
+  return res.json();
+}
+
+export default async function Home() {
+  const profiles = await getProfiles();
+  const jobs = await getJobs();
+
   return (
     <MainLayout header={<Navbar menuItems={menuItems} />} footer={<Footer />}>
-      <Hero />
+      <Hero jobs={jobs} profiles={profiles} />
     </MainLayout>
   );
 }

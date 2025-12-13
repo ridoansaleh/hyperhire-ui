@@ -2,19 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import FeatureItem from "@/components/molecules/FeatureItem";
-import type { Feature } from "@/types/Feature";
+import type { Job } from "@/types/Job";
 
-interface FeatureSliderProps {
-  items: Feature[];
+interface JobSliderProps {
+  items: Job[];
   interval?: number;
   itemWidth?: number;
 }
 
-export default function FeatureSlider({
+export default function JobSlider({
   items,
   interval = 5000,
   itemWidth = 210,
-}: FeatureSliderProps) {
+}: JobSliderProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
 

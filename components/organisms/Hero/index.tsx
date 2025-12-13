@@ -1,11 +1,17 @@
 import Image from "next/image";
 import Tooltip from "@/components/atoms/Tooltip";
-import FeatureSlider from "@/components/organisms/FeatureSlider";
+import JobSlider from "@/components/organisms/JobSlider";
 import FadeInUp from "@/components/atoms/animations/FadeInUp";
 import CardSlider from "../CardSlider";
-import { profiles, features } from "./data";
+import type { Job } from "@/types/Job";
+import type { Profile } from "@/types/Profile";
 
-export default function Hero() {
+interface HeroProps {
+  jobs: Job[];
+  profiles: Profile[];
+}
+
+export default function Hero({ jobs, profiles }: HeroProps) {
   return (
     <div className="py-4 px-4 lg:px-2 xl:px-0">
       <div
@@ -77,12 +83,12 @@ export default function Hero() {
           <CardSlider profiles={profiles} />
         </FadeInUp>
       </div>
-      {/* Features Slide => Desktop Only */}
+      {/* Jobs Slide => Desktop Only */}
       <FadeInUp
         id="slide-items"
         className="hidden lg:block mt-[72px] mb-[64px]"
       >
-        <FeatureSlider items={features} />
+        <JobSlider items={jobs} />
       </FadeInUp>
 
       {/* SERVICES section => Mobile Only */}
