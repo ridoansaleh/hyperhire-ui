@@ -2,6 +2,7 @@
 
 import React from "react";
 import clsx from "clsx";
+import FadeInUp from "@/components/atoms/animations/FadeInUp";
 import { useDeviceType } from "@/hooks/useDeviceType";
 
 type ArrowPosition =
@@ -17,6 +18,7 @@ interface TooltipProps {
   display?: boolean;
   bgColor?: string;
   arrowPosition?: ArrowPosition;
+  delayClass?: string;
 }
 
 export default function Tooltip({
@@ -25,6 +27,7 @@ export default function Tooltip({
   display = true,
   bgColor = "bg-[#000]",
   arrowPosition = "bottom-left",
+  delayClass = ""
 }: TooltipProps) {
   const { isMobile } = useDeviceType();
 
@@ -48,7 +51,7 @@ export default function Tooltip({
   return (
     <div className="relative inline-block">
       {children}
-      <div
+      <FadeInUp
         className={clsx(
           "absolute min-w-max px-3 py-2 text-sm text-white rounded shadow-lg transition-opacity duration-200",
           bgColor,
@@ -58,6 +61,7 @@ export default function Tooltip({
               arrowPosition === "bottom-center",
             "top-14 left-0": arrowPosition.startsWith("top"),
             hidden: !display,
+            [`${delayClass}`]: !!delayClass
           }
         )}
       >
@@ -74,7 +78,7 @@ export default function Tooltip({
           }
           className={arrowClasses}
         />
-      </div>
+      </FadeInUp>
     </div>
   );
 }

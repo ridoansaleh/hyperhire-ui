@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Tooltip from "@/components/atoms/Tooltip";
 import FeatureSlider from "@/components/organisms/FeatureSlider";
+import FadeInUp from "@/components/atoms/animations/FadeInUp";
 import CardSlider from "../CardSlider";
 import { profiles, features } from "./data";
 
@@ -20,26 +21,30 @@ export default function Hero() {
               </div>
             }
             arrowPosition="bottom-left"
+            delayClass="delay-300"
           >
-            <div id="title" className="text-[36px] leading-[130%]">
+            <FadeInUp id="title" className="text-[36px] leading-[130%]">
               최고의 실력을 가진 외국인 인재를 찾고 계신가요?
-            </div>
+            </FadeInUp>
           </Tooltip>
-          <div
+          <FadeInUp
             id="sub-title"
             className="lg:w-[260px] mt-[20px] text-[18px] text-[#FFFFFFCC]"
           >
             법률 및 인사관리 부담없이 1주일 이내에 원격으로 채용해보세요.
-          </div>
+          </FadeInUp>
           {/* Question => Desktop Only */}
-          <div
+          <FadeInUp
             id="marketing-question"
             className="hidden lg:block mt-[20px] underline"
           >
             개발자가 필요하신가요?
-          </div>
+          </FadeInUp>
           {/* Achievements => Desktop Only */}
-          <div id="achievements" className="hidden lg:flex gap-4 mt-[72px]">
+          <FadeInUp
+            id="achievements"
+            className="hidden lg:flex gap-4 mt-[72px]"
+          >
             <div className="w-[140px]">
               <div className="inline-block border-t font-black pt-2">
                 평균 월 120만원
@@ -66,19 +71,22 @@ export default function Hero() {
                 급하게 사람이 필요한 경우에도 빠른 채용이 가능합니다.
               </div>
             </div>
-          </div>
+          </FadeInUp>
         </div>
-        <div id="slide-cards" className="lg:max-w-[50%] mt-[80px] lg:mt-0">
+        <FadeInUp id="slide-cards" className="lg:max-w-[50%] mt-[80px] lg:mt-0">
           <CardSlider profiles={profiles} />
-        </div>
+        </FadeInUp>
       </div>
       {/* Features Slide => Desktop Only */}
-      <div id="slide-items" className="hidden lg:block mt-[72px] mb-[64px]">
+      <FadeInUp
+        id="slide-items"
+        className="hidden lg:block mt-[72px] mb-[64px]"
+      >
         <FeatureSlider items={features} />
-      </div>
+      </FadeInUp>
 
       {/* SERVICES section => Mobile Only */}
-      <div id="services" className="lg:hidden mt-[30px]">
+      <FadeInUp id="services" className="lg:hidden mt-[30px]">
         <div id="items" className="flex flex-wrap gap-4">
           <div className="w-[120px] flex items-center gap-2">
             <Image
@@ -124,7 +132,7 @@ export default function Hero() {
         <div id="question" className="mt-[20px] text-[#FBFF23] underline">
           개발자가 필요하신가요?
         </div>
-      </div>
+      </FadeInUp>
     </div>
   );
 }
