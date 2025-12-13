@@ -8,9 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      backgroundImage: {
+        "brand-gradient":
+          "linear-gradient(151.17deg, #26C2B9 8.69%, #288BE7 126.06%)",
       },
       fontFamily: {
         poppins: ["var(--font-poppins)", "sans-serif"],

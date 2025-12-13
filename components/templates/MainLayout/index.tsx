@@ -13,13 +13,7 @@ export default function MainLayout({
 }: MainLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
-      <div
-        className="text-white"
-        style={{
-          background:
-            "linear-gradient(151.17deg, #26C2B9 8.69%, #288BE7 126.06%)",
-        }}
-      >
+      <div className="bg-brand-gradient text-white">
         <header className="max-w-[1024px] mx-auto">{header}</header>
         <main className="max-w-[1024px] mx-auto">{children}</main>
       </div>
