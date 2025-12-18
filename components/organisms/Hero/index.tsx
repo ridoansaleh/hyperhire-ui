@@ -86,7 +86,7 @@ export default function Hero({ jobs, profiles }: HeroProps) {
       {/* Jobs Slide => Desktop Only */}
       <FadeInUp
         id="slide-items"
-        className="hidden lg:block mt-[72px] mb-[64px]"
+        className="hidden lg:flex w-[calc(100%+((100vw-1024px)/2))] overflow-x-auto whitespace-nowrap mt-[72px] mb-[64px]"
       >
         <JobSlider items={jobs} />
       </FadeInUp>

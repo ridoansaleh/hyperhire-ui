@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import FeatureItem from "@/components/molecules/FeatureItem";
+import JobItem from "@/components/molecules/JobItem";
 import type { Job } from "@/types/Job";
 
 interface JobSliderProps {
@@ -13,7 +13,7 @@ interface JobSliderProps {
 export default function JobSlider({
   items,
   interval = 5000,
-  itemWidth = 210,
+  itemWidth = 250,
 }: JobSliderProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
@@ -54,12 +54,10 @@ export default function JobSlider({
   }, [index, itemWidth, items.length]);
 
   return (
-    <div className="flex overflow-x-auto whitespace-nowrap">
-      <div ref={sliderRef} className="flex gap-4">
-        {loopItems.map((p, i) => (
-          <FeatureItem key={i} {...p} />
-        ))}
-      </div>
+    <div ref={sliderRef} className="flex gap-4">
+      {loopItems.map((p, i) => (
+        <JobItem key={i} {...p} itemWidth={itemWidth} />
+      ))}
     </div>
   );
 }
