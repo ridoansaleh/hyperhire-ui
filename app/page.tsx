@@ -6,6 +6,7 @@ import { BASE_URL } from "@/lib/config";
 
 const menuItems = [
   {
+    id: 1,
     href: "#",
     label: "채용",
     hasDropdown: true,
@@ -16,6 +17,7 @@ const menuItems = [
     ],
   },
   {
+    id: 2,
     href: "#",
     label: "해외 개발자 활용 서비스",
     hasDropdown: false,
