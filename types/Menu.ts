@@ -4,7 +4,7 @@ export interface DropdownItem {
 }
 
 export interface MenuItem {
-  id: string;
+  id: number;
   href: string;
   label: string;
   hasDropdown: boolean;
