@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
+import { X } from "lucide-react";
 import Logo from "@/components/atoms/Logo";
 import MobileNavItem from "@/components/molecules/MobileNavItem";
 
@@ -31,7 +32,7 @@ export default function MobileNavbar({ isOpen, onClose }: MobileNavbarProps) {
       <div className="flex items-center justify-between p-4 border-b">
         <Logo />
         <button onClick={onClose} aria-label="Close menu" className="text-2xl">
-          ✕
+          <X className="w-[21px] h-[21px]" />
         </button>
       </div>
       <nav className="flex flex-col gap-6 p-6 text-lg">

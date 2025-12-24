@@ -38,7 +38,7 @@ export default function MobileNavItem({
       >
         {label}
         <ChevronDown
-          className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`w-5 h-5 transition-transform ${open ? "rotate-180" : ""}`}
         />
       </button>
 
